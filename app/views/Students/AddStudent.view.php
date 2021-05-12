@@ -17,7 +17,7 @@
             <option value="autre">Autre</option>
         </select>
 
-        <select class="form-select mb-3" aria-label="Default select example" name="student_class">
+        <select class="form-select mb-3"  name="student_class">
             <option selected>Class</option>
             <?php foreach ($data['class'] as $value) :    ?>
                 <option value="<?php echo $value->class_id ?>"><?php echo $value->class_name ?></option>
@@ -25,14 +25,14 @@
         </select>
 
 
-        <select class="form-select mb-3" aria-label="Default select example" name="student_parent">
+        <select class="form-select mb-3"name="student_parent">
             <option selected>Parent</option>
             <?php foreach ($data['parent'] as $value) :    ?>
                 <option value="<?php echo $value->parent_id ?>"><?php echo $value->parent_fname . ' ' . $value->parent_lname  ?></option>
             <?php endforeach;    ?>
         </select>
 
-        <select class="form-select mb-3" aria-label="Default select example" name="student_teacher">
+        <select class="form-select mb-3"  name="student_teacher">
             <option selected>Teacher</option>
             <?php foreach ($data['teacher'] as $value) :    ?>
                 <option value="<?php echo $value->teacher_id ?>"><?php echo $value->teacher_fname . ' ' . $value->teacher_lname  ?></option>

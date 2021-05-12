@@ -84,9 +84,21 @@ class Students extends Controller
                 die('RIP');
             }
         } else {
-            $result = $this->studentModel->getStudentById($id);
+            $infos = $this->studentModel->getStudentById($id);
+            $class = $this->adminModel->getClass();
+            $subjects = $this->adminModel->getSubject();
+            $parents = $this->adminModel->getParents();
+            $teachers = $this->adminModel->getteachers();
 
-            $this->view('Students/UpdateStudent', $result);
+            $data = [
+                'infos' => $infos,
+                'class' => $class,
+                'subject' => $subjects,
+                'parent' => $parents,
+                'teacher' => $teachers
+
+            ];
+            $this->view('Students/UpdateStudent', $data);
         }
     }
 
