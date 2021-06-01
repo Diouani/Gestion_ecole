@@ -22,7 +22,7 @@ class Teachers extends Controller
     {
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+         
             $data = [
                 'teacher_fname' => $_POST['teacher_fname'],
                 'teacher_lname' => $_POST['teacher_lname'],
@@ -74,9 +74,24 @@ class Teachers extends Controller
                 die('RIP');
             }
         } else {
-            $result = $this->teacherModel->getteacherById($id);
+            $infos = $this->teacherModel->getteacherById($id);
 
-            $this->view('teachers/Updateteacher', $result);
+
+            $class = $this->adminModel->getClass();
+            $subjects = $this->adminModel->getSubject();
+            $parents = $this->adminModel->getParents();
+            $teachers = $this->adminModel->getteachers();
+
+            $data = [
+                'infos' => $infos,
+                'class' => $class,
+                'subject' => $subjects,
+                'parent' => $parents,
+                'teacher' => $teachers
+
+            ];
+
+            $this->view('teachers/Updateteacher', $data);
         }
     }
 

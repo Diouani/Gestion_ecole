@@ -1,6 +1,6 @@
 <?php
 
-class teacher
+class teacher 
 
 {
     private $database;

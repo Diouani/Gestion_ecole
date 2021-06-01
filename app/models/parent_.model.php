@@ -1,7 +1,7 @@
 <?php
 
 
-class parent_
+class parent_ 
 {
     private $database;
 

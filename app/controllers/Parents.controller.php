@@ -42,7 +42,7 @@ class Parents extends Controller
                 $this->view('parents/Addparent', $infos);
             }
         } else {
-            
+
             $this->view('parents/Addparent');
         }
     }
@@ -81,7 +81,7 @@ class Parents extends Controller
     public function delete($id)
     {
 
-        if ($this->parentModel->delete($id)) {
+        if ($this->parentModel->deleteparent($id)) {
             redirect('parents/show');
         } else {
             die('NO DELETE');

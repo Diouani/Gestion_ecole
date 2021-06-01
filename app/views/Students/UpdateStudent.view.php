@@ -1,11 +1,18 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
+<div class="container-scroller">
+    
+    <?php require APPROOT . '/views/inc/navbar.php'; ?>
+    
+    <div class="container-fluid page-body-wrapper">
+       
+        <?php require APPROOT . '/views/inc/sidebar.php'; ?>
 
 
 <div class="container col-sm-6 mt-5">
 
 
     <h1 class="mb-3">Update Student</h1>
-    <form action="<?php echo URLROOT; ?>/students/update/<?php echo $data['infos']->student_id; ?>" class="form-control" method="POST">
+    <form action="<?php echo URLROOT; ?>/students/update/<?php echo $data['infos']->student_id; ?>" method="POST">
         <div class="input-group mb-3 mt-3">
             <span class="input-group-text">Full Name</span>
             <input type="text" aria-label="First name" class="form-control" placeholder="First Name" name="student_fname" value="<?php echo $data['infos']->student_fname    ?>">
